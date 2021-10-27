@@ -18,6 +18,11 @@ fetch("/json/quotes.json").then(response => response.json()).then(jsonData => {
 //     getQuote()
 // })
 
+const bodyColor = function () {
+    const randomColorValue = Math.floor(Math.random() * 360)
+    bodyTag.style.backgroundColor = `hsl(${randomColorValue}, 60%, 40%)`
+    randomTag.style.color = `hsl(${randomColorValue}, 60%, 40%)`
+}
 
 const getQuote = function () {
 
@@ -37,8 +42,8 @@ const getQuote = function () {
         } else {
             quoteTag.classList.remove("long")
         }
-
         const randomColorValue = Math.floor(Math.random() * 360)
+
         bodyTag.style.backgroundColor = `hsl(${randomColorValue}, 60%, 40%)`
         randomTag.style.color = `hsl(${randomColorValue}, 60%, 40%)`
     }
@@ -51,4 +56,5 @@ randomTag.addEventListener('click', function () {
     getQuote()
 })
 
+bodyColor()
 getQuote()
